@@ -1,0 +1,9 @@
+---
+# vars file for consul_k8s
+consul_k8s_platform: '{{ consul_k8s_os }}_{{ consul_k8s_arch }}'
+consul_k8s_archive: consul-k8s_{{ consul_k8s_ver }}_{{ consul_k8s_platform }}.zip
+consul_k8s_url: '{{ consul_k8s_mirror }}/{{ consul_k8s_ver }}/{{ consul_k8s_archive }}'
+consul_k8s_checksum: '{{ consul_k8s_checksums[consul_k8s_ver][consul_k8s_platform] }}'
+consul_k8s_install_dir: '{{ consul_k8s_parent_install_dir }}/consul-k8s-{{ consul_k8s_ver }}'
+consul_k8s_install_exe: '{{ consul_k8s_install_dir }}/consul-k8s'
+consul_k8s_link: '{{ consul_k8s_parent_install_dir }}/bin/consul-k8s'

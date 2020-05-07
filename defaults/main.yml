@@ -1,0 +1,34 @@
+---
+# defaults file for consul_k8s
+consul_k8s_ver: 0.14.0
+consul_k8s_os: linux
+consul_k8s_arch: amd64
+consul_k8s_parent_install_dir: /usr/local
+consul_k8s_mirror: https://releases.hashicorp.com/consul-k8s
+consul_k8s_checksums:
+  # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_SHA256SUMS
+  '0.14.0':
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_darwin_386.zip
+    darwin_386: sha256:ea015117ba89e1df8b89e48ec9e9569e8fc45a592fbe4ffa802ca5077a97d1ad
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_darwin_amd64.zip
+    darwin_amd64: sha256:d6ac4e0595ab6484dbbbdfc62f5aa9e7cbe90b3c7494a7a01062f80f2190a774
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_freebsd_386.zip
+    freebsd_386: sha256:af7f8507bf9e2ff747e7addb35f20f6d95cc6673c881df69b4dca5def2fc3c5a
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_freebsd_amd64.zip
+    freebsd_amd64: sha256:60d7500be510ae6e049bb7e42c3e01918f4686fbffa99a98f948b588110c1288
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_linux_386.zip
+    linux_386: sha256:305828b07e416184318f6a91fed29712c88de5805bd68828d10bd4845c65bd45
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_linux_amd64.zip
+    linux_amd64: sha256:e583937d3e4cbd4e86c9c423ca222143ba70b99f7fa18bb1f4979ae98c5225bd
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_linux_arm64.zip
+    linux_arm64: sha256:654763fb741bd58c768f52664016c2e379fe5bb1e0edd7f67299884e830dea1b
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_linux_armelv5.zip
+    linux_armelv5: sha256:e953221e14975be7c7f024b4871df4f5ec0d1004ca31b2ec62a182f2c4ef2ba7
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_linux_armhfv6.zip
+    linux_armhfv6: sha256:6629799c5c7ea8a9527a3153173a46d53df7758cbc2b8ab6fd8f0f030230c40c
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_solaris_amd64.zip
+    solaris_amd64: sha256:7d05128d899079c3c9e1cb2e4b2fc69b21219735f4dea907b816d5ec3321da69
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_windows_386.zip
+    windows_386: sha256:83aa6d7c3b86b8067ca7c85bc5d330808215e3d6b58ef32a9e1e9173aa0777f3
+    # https://releases.hashicorp.com/consul-k8s/0.14.0/consul-k8s_0.14.0_windows_amd64.zip
+    windows_amd64: sha256:1f75523e41eeef47a05b1b62d7c3be0a4a823cf8b2a1378983ee16061812b8cb
