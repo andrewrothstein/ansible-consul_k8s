@@ -9,7 +9,7 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for existing install
+- name: check for existing install in {{ consul_k8s_install_dir }}
   become: yes
   stat:
     path: '{{ consul_k8s_install_dir }}'
@@ -17,37 +17,37 @@
   register: consul_k8s_binary
 - when: not consul_k8s_binary.stat.exists
   block:
-    - name: download consul-k8s...
+    - name: download {{ consul_k8s_url }}
       become: yes
       become_user: root
       get_url:
         url: '{{ consul_k8s_url }}'
-        dest: /tmp/{{ consul_k8s_archive }}
+        dest: '{{ consul_k8s_tmp_archive }}'
         checksum: '{{ consul_k8s_checksum }}'
         mode: 0644
-    - name: mkdir for install
+    - name: mkdir {{ consul_k8s_install_dir }}
       become: yes
       become_user: root
       file:
         path: '{{ consul_k8s_install_dir }}'
         state: directory
         mode: 0755
-    - name: unarchive...
+    - name: unarchive {{ consul_k8s_tmp_archive }}
       become: yes
       become_user: root
       unarchive:
         remote_src: yes
-        src: /tmp/{{ consul_k8s_archive }}
+        src: '{{ consul_k8s_tmp_archive }}'
         dest: '{{ consul_k8s_install_dir }}'
         creates: '{{ consul_k8s_install_exe }}'
   always:
-    - name: cleanup...
+    - name: rm {{ consul_k8s_tmp_archive }}
       become: yes
       become_user: root
       file:
-        path: /tmp/{{ consul_k8s_archive }}
+        path: '{{ consul_k8s_tmp_archive }}'
         state: absent
-- name: link...
+- name: linking {{ consul_k8s_link }} to {{ consul_k8s_install_exe }}
   become: yes
   become_user: root
   file:
