@@ -30,7 +30,6 @@ dl_all () {
 
     printf "  # %s\n" $rchecksums
     printf "  '%s':\n" $ver
-    dl $ver $lchecksums darwin 386
     dl $ver $lchecksums darwin amd64
     dl $ver $lchecksums freebsd 386
     dl $ver $lchecksums freebsd amd64
@@ -44,4 +43,4 @@ dl_all () {
     dl $ver $lchecksums windows amd64
 }
 
-dl_all ${1:-0.24.0}
+dl_all ${1:-0.25.0}
