@@ -25,7 +25,7 @@ dl_all () {
 
     if [ ! -e $lchecksums ];
     then
-        wget -q -O $lchecksums $rchecksums
+        curl -sSLf -o $lchecksums $rchecksums
     fi
 
     printf "  # %s\n" $rchecksums
@@ -36,11 +36,15 @@ dl_all () {
     dl $ver $lchecksums linux 386
     dl $ver $lchecksums linux amd64
     dl $ver $lchecksums linux arm64
-    dl $ver $lchecksums linux armelv5
-    dl $ver $lchecksums linux armhfv6
-    dl $ver $lchecksums solaris amd64
     dl $ver $lchecksums windows 386
     dl $ver $lchecksums windows amd64
 }
 
-dl_all ${1:-0.25.0}
+dl_all 0.26.0
+dl_all 0.36.0
+dl_all 0.37.0
+dl_all 0.38.0
+dl_all 0.39.0
+dl_all 0.40.0
+dl_all 0.41.0
+dl_all ${1:-0.41.1}
